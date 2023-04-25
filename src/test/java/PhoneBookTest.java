@@ -29,10 +29,20 @@ public class PhoneBookTest {
     }
 
     @Test
-    public void testFindByNumber(){
+    public void testFindByNumber() {
         phoneBook.add("Sergey", "+79204444444");
         String expected = "Sergey";
         String numberValue = "+79204444444";
         Assertions.assertEquals(expected, phoneBook.findByNumber(numberValue));
+    }
+
+    @Test
+    public void testFindByName() {
+        phoneBook.add("Sergey", "+79204444444");
+        phoneBook.add("Julia", "+79205555555");
+        phoneBook.add("Vasja", "+79203333333");
+        String expected = "+79205555555";
+        String nameValue = "Julia";
+        Assertions.assertEquals(expected, phoneBook.findByName(nameValue));
     }
 }
