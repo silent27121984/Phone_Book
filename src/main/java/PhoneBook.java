@@ -14,4 +14,8 @@ public class PhoneBook {
             throw new RuntimeException("Имя контакта пустое");
         return contactsList.size();
     }
+
+    public String findByNumber(String phoneNumber){
+        return null;
+    }
 }

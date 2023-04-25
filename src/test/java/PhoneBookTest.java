@@ -27,4 +27,12 @@ public class PhoneBookTest {
     public void testNameIsNull() {
         Assertions.assertThrows(RuntimeException.class, () -> phoneBook.add(null, "+79203333333"));
     }
+
+    @Test
+    public void testFindByNumber(){
+        phoneBook.add("Sergey", "+79204444444");
+        String expected = "Sergey";
+        String numberValue = "+79204444444";
+        Assertions.assertEquals(expected, phoneBook.findByNumber(numberValue));
+    }
 }
