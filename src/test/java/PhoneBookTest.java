@@ -45,4 +45,13 @@ public class PhoneBookTest {
         String nameValue = "Julia";
         Assertions.assertEquals(expected, phoneBook.findByName(nameValue));
     }
+
+    @Test
+    public void testPrintAllNames() {
+        phoneBook.add("Sergey", "+79204444444");
+        phoneBook.add("Julia", "+79205555555");
+        phoneBook.add("Petia", "+79202222222");
+        String expected = "[Julia, Petia, Sergey]";
+        Assertions.assertEquals(expected, phoneBook.printAllNames());
+    }
 }
